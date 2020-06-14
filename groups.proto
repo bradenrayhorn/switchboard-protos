@@ -1,0 +1,16 @@
+syntax = "proto3";
+package groups;
+
+option go_package = "github.com/bradenrayhorn/switchboard-protos;switchboard_protos";
+
+message GetGroupsRequest {
+  string userId = 1;
+}
+
+message GetGroupsResponse {
+  repeated string groupIds = 1;
+}
+
+service GroupService {
+  rpc GetGroups(GetGroupsRequest) returns (GetGroupsResponse) {}
+}
